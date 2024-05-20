@@ -68,11 +68,11 @@ export default function Home() {
     <div className="h-[calc(100vh-80px)]">
       <div className="flex flex-col items-center h-full">
         <div className="max-w-[1800px] w-full h-full">
-          <div className="flex items-center p-8 h-full gap-12">
-            <div className="w-[57%] h-full drop-shadow-2xl bg-white rounded-2xl">
+          <div className="flex items-center p-28 h-full gap-12">
+            <div className="w-1/2 h-full drop-shadow-2xl bg-white rounded-2xl">
               <Calender ymd={ymd} setymd={setYmd} />
             </div>
-            <div className="w-[43%] h-full drop-shadow-2xl bg-white rounded-2xl flex flex-col p-6 justify-stretch">
+            <div className="w-1/2 h-full drop-shadow-2xl bg-white rounded-2xl flex flex-col p-6 justify-stretch">
               <span className="h-10 text-base font-medium">
                 {lunarConv(ymd[0], ymd[1] + 1, ymd[2])}
               </span>
