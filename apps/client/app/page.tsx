@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Footer from "@/components/nav/footer";
-import Header from "@/components/nav/header";
+import Footer from "@/components/ui/nav/footer";
+import Header from "@/components/ui/nav/header";
 export default function Home() {
   return (
     <>
