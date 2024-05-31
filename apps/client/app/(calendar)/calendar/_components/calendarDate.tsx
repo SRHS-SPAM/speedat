@@ -1,14 +1,7 @@
 import { cn } from "@/lib/utils";
 import { RefObject, useEffect } from "react";
-interface MoveYmdProps {
-  y?: number;
-  m?: number;
-  d?: number;
-  top?: string;
-  bot?: string;
-  movingway: "pre" | "nxt" | "cur";
-  ref: RefObject<HTMLDivElement>;
-}
+import { DatesFace, MoveYmdProps } from "../_data/calendarType";
+
 interface CalendarDateProps {
   year: number;
   month: number;
@@ -18,10 +11,7 @@ interface CalendarDateProps {
   moveymd?: ({ y, m, d, movingway, ref }: MoveYmdProps) => void;
   nowref?: RefObject<HTMLDivElement>;
 }
-interface DatesFace {
-  date: number;
-  mon: "pre" | "cur" | "nxt";
-}
+
 const CalendarDate = ({
   year,
   month,
@@ -77,18 +67,14 @@ const CalendarDate = ({
       {Dates.map((ai, i) => (
         <div
           key={i}
-          className="text-center text-black text-xl font-normal h-full items-center w-full flex justify-stretch"
-        >
+          className="text-center text-black text-xl font-normal h-full items-center w-full flex justify-stretch">
           {ai.map((aj, j) => (
             <div
               key={j}
               className="cursor-pointer flex items-center justify-center h-full w-full"
               onClick={() => {
-                moveymd &&
-                  nowref &&
-                  moveymd({ d: aj.date, movingway: aj.mon, ref: nowref });
-              }}
-            >
+                moveymd && nowref && moveymd({ d: aj.date, movingway: aj.mon, ref: nowref });
+              }}>
               <div
                 className={cn(
                   "select-none hover:bg-yellow-200 w-[60px] h-[60px] flex items-center justify-center rounded-full ",
@@ -101,9 +87,8 @@ const CalendarDate = ({
                   !isgray &&
                     aj.mon == "cur" &&
                     aj.date == date &&
-                    "hover:bg-yellow-300 border-yellow-300 border-2"
-                )}
-              >
+                    "hover:bg-yellow-300 border-yellow-300 border-2",
+                )}>
                 {aj.date}
               </div>
             </div>
