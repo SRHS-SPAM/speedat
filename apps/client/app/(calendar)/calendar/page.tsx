@@ -4,9 +4,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Plus } from "lucide-react";
-import EventItem from "../_components/eventItem";
+import EventItem from "../../_components/eventItem";
 import { lunarConv } from "@/lib/utils";
-import Calender from "../_components/calendar";
+import Calender from "../../_components/calendar";
 
 interface EventItemProps {
   title: string;
@@ -92,9 +92,7 @@ export default function Home() {
               <div className="h-11 mt-12 flex justify-between items-end">
                 <input
                   className="flex-1 h-full rounded-full bg-slate-300 px-8 placeholder:text-white text-white font-semibold text-base"
-                  placeholder={`${ymd[0]}년 ${ymd[1] + 1}월 ${
-                    ymd[2]
-                  }일에 일정 추가`}
+                  placeholder={`${ymd[0]}년 ${ymd[1] + 1}월 ${ymd[2]}일에 일정 추가`}
                 />
                 <Plus className="h-full w-[44px] ml-4 text-white bg-yellow-300 rounded-full cursor-pointer" />
               </div>
