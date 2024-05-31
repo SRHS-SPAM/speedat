@@ -1,27 +1,18 @@
 import { cn } from "@/lib/utils";
-import { RefObject } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 import CalendarDate from "./calendarDate";
-
-interface MoveYmdProps {
-  y?: number;
-  m?: number;
-  d?: number;
-  top?: string;
-  bot?: string;
-  movingway: "pre"|"nxt"|"cur";
-  ref: RefObject<HTMLDivElement>;
-}
+import { MoveYmdProps } from "../_data/calendarType";
+import { Day } from "../_data/datas";
 
 interface CalendarMonthProps {
   ymd: number[];
   isMoving: boolean;
-  moveymd: ({y,m,d,movingway,ref}:MoveYmdProps) =>void;
-  setymd?: ([]) => void;
+  moveymd: ({ y, m, d, movingway, ref }: MoveYmdProps) => void;
+  setymd?: Dispatch<SetStateAction<number[]>>;
   wrapRef: RefObject<HTMLDivElement>;
 }
-const Day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const CalendarDateWrap = ({ymd, isMoving, moveymd, setymd, wrapRef}:CalendarMonthProps) => {
+const CalendarDateWrap = ({ ymd, isMoving, moveymd, setymd, wrapRef }: CalendarMonthProps) => {
   const year = ymd[0];
   const month = ymd[1];
   const date = ymd[2];
@@ -41,9 +32,8 @@ const CalendarDateWrap = ({ymd, isMoving, moveymd, setymd, wrapRef}:CalendarMont
           ref={wrapRef}
           className={cn(
             "h-[300%] w-full top-[-100%] absolute flex flex-col justify-stretch opacity-100",
-            isMoving && "transition-all ease-ease duration-300"
-          )}
-        >
+            isMoving && "transition-all ease-ease duration-300",
+          )}>
           <CalendarDate
             year={pre.getFullYear()}
             month={pre.getMonth()}

@@ -1,46 +1,18 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ElementRef, RefObject, use, useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import CalendarHead from "./calendar/calendarHead";
-import CalendarDateWrap from "./calendar/calendarDateWrap";
-import CalendarYearWrap from "./calendar/calendarYearWrap";
+import { Dispatch, ElementRef, SetStateAction, useRef, useState } from "react";
+import CalendarHead from "./calendarHead";
+import CalendarDateWrap from "./calendarDateWrap";
+import CalendarYearWrap from "./calendarYearWrap";
+import { MoveYmdProps } from "../_data/calendarType";
+import { Month } from "../_data/datas";
 
 interface CalendarProps {
   ymd: number[];
-  setymd?: ([]) => void;
+  setymd?: Dispatch<SetStateAction<number[]>>;
 }
 
-interface DatesFace {
-  date: number;
-  mon: "pre" | "cur" | "nxt";
-}
-
-interface MoveYmdProps {
-  y?: number;
-  m?: number;
-  d?: number;
-  top?: string;
-  bot?: string;
-  movingway: "pre" | "nxt" | "cur";
-  ref: RefObject<HTMLDivElement>;
-}
-
-const Month = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 const Calender = ({ ymd, setymd }: CalendarProps) => {
   const currentDate = new Date();
   const nowy = currentDate.getFullYear();
@@ -67,18 +39,18 @@ const Calender = ({ ymd, setymd }: CalendarProps) => {
       if (isMonth) {
         tm = tt;
       } else {
-        ty = tt*8;
+        ty = tt * 8;
       }
       if (tm + month < 0) {
-        ty=-1;
+        ty = -1;
       } else if (tm + month >= 12) {
-        ty=1;
+        ty = 1;
       }
       let ry = y ? y : year + ty,
-        rm = m ? m : (month + tm + 12)%12,
+        rm = m ? m : (month + tm + 12) % 12,
         rd = d ? d : date + td;
-      let prepct = top ? top : !isMonth?  "-33.4%":"0%",
-        nxtpct = bot ? bot : !isMonth? "-166.6%":"-200%"; 
+      let prepct = top ? top : !isMonth ? "-33.4%" : "0%",
+        nxtpct = bot ? bot : !isMonth ? "-166.6%" : "-200%";
       //console.log(ry, rm, rd, y, m, d, prepct, nxtpct);
       if (setymd) {
         if (movingway == "cur") {
@@ -128,7 +100,7 @@ const Calender = ({ ymd, setymd }: CalendarProps) => {
         }
         setTimeout(() => {
           setIsMoving(isMoving);
-          setNowRef(!isMonth?wrapRef:wrapYearRef)
+          setNowRef(!isMonth ? wrapRef : wrapYearRef);
           setIsMonth(!isMonth);
         }, 300);
       }
@@ -161,9 +133,8 @@ const Calender = ({ ymd, setymd }: CalendarProps) => {
           ref={wrapWrapRef}
           className={cn(
             "absolute w-[200%] left-0 h-full flex",
-            isMoving && "transition-all ease-ease duration-300"
-          )}
-        >
+            isMoving && "transition-all ease-ease duration-300",
+          )}>
           <CalendarDateWrap
             isMoving={isMoving}
             wrapRef={wrapRef}
