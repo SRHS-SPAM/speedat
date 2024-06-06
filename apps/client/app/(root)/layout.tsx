@@ -1,5 +1,5 @@
-import Header from "@/components/nav/header";
 import Footer from "@/components/nav/footer";
+import Header from "@/components/nav/header";
 
 export default function RootLayout({
   children,
@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main className="mt-[79px] h-screen"> {children}</main>
       <Footer />
     </>

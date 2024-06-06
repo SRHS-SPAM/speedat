@@ -1,6 +1,8 @@
 "use client";
-import { useState } from "react";
+
 import Image from "next/image";
+import { useState } from "react";
+
 const Footer = () => {
   const [isDarkMode, setIsDarkMode] = useState(false); //다크모드 관리용
   return (
@@ -15,7 +17,11 @@ const Footer = () => {
             height={30}
             priority
           />
-          <div className="text-black mt-[5px] dark:text-white">|</div>
+          {isDarkMode ? (
+            <div className="w-[5.12px] h-[30px] relative bg-white rounded-sm"></div>
+          ) : (
+            <div className="w-[5.12px] h-[30px] relative bg-zinc-900 rounded-sm"></div>
+          )}
           <Image
             src={isDarkMode ? "/instaDark.svg" : "/insta.png"}
             alt="insta"
