@@ -10,9 +10,9 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      <div className="flex flex-row">
+      <div className="flex flex-row justify-start">
         <Sidebar />
-        <main className="mt-[79px] h-screen"> {children}</main>
+        <main className="mt-[79px] w-full"> {children}</main>
       </div>
       <Footer />
     </>
