@@ -1,7 +1,7 @@
 import { Search, Eye, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 
-//맨 위 이미지 넣어야 하고 글씨체 바꿔야함
+//탭 아래 부분을 전부 컴포넌트호 ㅏ시켜야함 초비ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ사아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅇ
 const list = [
   ["Title 어쩌구 저쩌구", "Discription 어쩌구 저쩌구", "시스템과 게시판", "0", "30", "56", "12"],
   ["Title 어쩌구 저쩌구", "Discription 어쩌구 저쩌구", "시스템과 게시판", "15", "30", "56", "12"],
