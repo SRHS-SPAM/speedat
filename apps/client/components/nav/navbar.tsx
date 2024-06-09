@@ -1,13 +1,8 @@
-import { Bell, UserRound } from "lucide-react";
+import { Bell, Menu, UserRound } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Menu from "./menu";
 
-const NavList = [
-  <Bell key={1} size={28} />,
-  <UserRound key={2} size={28} />,
-  <Menu key={3} />,
-];
+const NavList = [<Bell key={1} size={28} />, <UserRound key={2} size={28} />, <Menu key={3} />];
 
 const Navbar = () => {
   return (
@@ -17,10 +12,7 @@ const Navbar = () => {
       </Link>
       <div className="flex items-center gap-6">
         {NavList.map((arg, i) => (
-          <div
-            className="bg-[#E5D283] w-14 h-14 flex items-center justify-center rounded-[50%]"
-            key={i}
-          >
+          <div className="w-14 h-14 flex items-center justify-center" key={i}>
             {arg}
           </div>
         ))}
