@@ -6,7 +6,7 @@ import { useState } from "react";
 const Footer = () => {
   const [isDarkMode, setIsDarkMode] = useState(false); //다크모드 관리용
   return (
-    <div className="w-full h-[80px] bg-white dark:bg-zinc-900">
+    <div className="w-full h-[80px] bg-white dark:bg-zinc-900 relative">
       <div className=" relative flex flex-col">
         <div className=" justify-between w-[100px] flex absolute left-1/2 my-[3px] mx-[-50px]">
           <Image
