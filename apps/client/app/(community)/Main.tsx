@@ -18,14 +18,15 @@ const tab = ["인기 글", "설계과", "제어과", "시스템", "군특성화"
 const Main = () => {
   return (
     <div className="w-full flex flex-col min-w-[721px]">
-      <div className="w-full flex flex-row justify-center">
+      <img src="/communityImage.svg" />
+      <div className="w-full flex flex-row justify-center mt-[48px]">
         <div className="w-[85%] flex justify-end flex-col">
           <div className="w-full h-[41px] flex flex-row items-center">
-            <div className="w-[16%] h-full bg-[#FEF9C3] border-b border-[#DF9E12] flex justify-center items-center">
+            <div className="w-[16%] text-[14px] h-full bg-[#FEF9C3] border-b border-[#DF9E12] flex justify-center items-center">
               커뮤니티 홈
             </div>
             {tab.map((arg, i) => (
-              <div className="w-[20%] h-full flex justify-center items-center border-b border-[#9CA3AF]">
+              <div className="w-[20%] h-full flex justify-center text-[14px] items-center border-b border-[#9CA3AF]">
                 {tab[i]}
               </div>
             ))}
@@ -44,7 +45,7 @@ const Main = () => {
               최신 글
             </div>
             {list.map((arg, i) => (
-              <div className="w-full h-[124px] border-b border-gray-400 mb-[12px] flex flex-row px-[22px] py-[12px] justify-between">
+              <div className="w-full h-[124px] rounded-[10px] shadow mb-[12px] flex flex-row px-[22px] py-[12px] justify-between">
                 <div className="flex flex-col justify-between">
                   <div>
                     <div className="text-gray-700 text-xl font-bold">{list[i][0]}</div>
@@ -77,7 +78,7 @@ const Main = () => {
               인기 글
             </div>
             {list.map((arg, i) => (
-              <div className="w-full h-[124px] border-b border-gray-400 mb-[12px] flex flex-row px-[22px] py-[12px] justify-between">
+              <div className="w-full h-[124px] rounded-[10px] shadow mb-[12px] flex flex-row px-[22px] py-[12px] justify-between">
                 <div className="flex flex-col justify-between">
                   <div>
                     <div className="text-gray-700 text-xl font-bold">{best[i][0]}</div>
