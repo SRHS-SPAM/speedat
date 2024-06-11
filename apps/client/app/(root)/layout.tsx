@@ -1,5 +1,5 @@
-import Footer from "@/components/nav/footer";
-import Header from "@/components/nav/header";
+import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
 import Sidebar from "@/components/nav/sidebar";
 
 export default function RootLayout({
