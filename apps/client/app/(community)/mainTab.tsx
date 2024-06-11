@@ -18,7 +18,7 @@ const MainTab = () => {
     }
   };
   return (
-    <div className="w-full flex flex-row justify-center mt-[48px]">
+    <div className="w-full flex flex-row justify-center mt-[48px] mb-[89px]">
       <div className="w-[85%] flex justify-end flex-col">
         <div className="w-full h-[41px] flex flex-row items-center">
           {tab.map((arg, i) => (
@@ -42,6 +42,7 @@ const MainTab = () => {
             <Search size={28} className="cursor-pointer ml-2" />
           </div>
         </div>
+        <img src="./commuMainImage.svg" />
         {selectContent()}
       </div>
     </div>
