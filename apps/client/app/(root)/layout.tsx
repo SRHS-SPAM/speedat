@@ -13,6 +13,7 @@ export default function RootLayout({
       <div className="flex flex-row justify-start">
         <Sidebar />
         <main className="w-full ml-[240px] mt-[79px]"> {children}</main>
+        <Footer />
       </div>
     </>
   );

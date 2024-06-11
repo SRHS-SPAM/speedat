@@ -38,7 +38,7 @@ const BestTab = () => {
     <>
       <div className="w-full gap-[12px] mt-[88px]">
         <div className="w-full h-[37px] border-b border-[#9CA3AF] text-zinc-900 text-xl mb-[20px] font-['Pretendard']">
-          인기 글
+          주간 인기 글 TOP 100
         </div>
         {best.map((arg, i) => (
           <div className="w-full h-[124px] rounded-[10px] shadow mb-[12px] flex flex-row px-[22px] py-[12px] justify-between">

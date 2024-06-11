@@ -26,6 +26,7 @@ const CommunityHome = () => {
   };
   return (
     <>
+      <img src="./commuMainImage.svg" />
       <div className="w-full gap-[12px] mt-[88px]">
         <div className="w-full h-[37px] border-b border-[#9CA3AF] text-zinc-900 text-xl mb-[20px] font-['Pretendard']">
           주간 인기 글 TOP 100

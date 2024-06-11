@@ -42,7 +42,6 @@ const MainTab = () => {
             <Search size={28} className="cursor-pointer ml-2" />
           </div>
         </div>
-        <img src="./commuMainImage.svg" />
         {selectContent()}
       </div>
     </div>

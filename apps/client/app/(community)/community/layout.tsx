@@ -1,4 +1,4 @@
-import Sidebar from "@/components/nav/sidebar";
+import Sidebar from "@/components/sidebar/sidebar";
 
 export default function RootLayout({
   children,
@@ -9,7 +9,7 @@ export default function RootLayout({
     <>
       <div className="flex flex-row justify-start">
         <Sidebar />
-        <main className="mt-[79px] w-full"> {children}</main>
+        <main className="mt-[79px] w-full ml-[240px]"> {children}</main>
       </div>
     </>
   );
