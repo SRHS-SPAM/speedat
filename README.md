@@ -13,20 +13,31 @@ $ pnpm install
 $ pnpm <package-name> <command>
 
 # example
-$ pnpm client dev
+$ pnpm dev
+$ pnpm storybook
+
 ```
 
 ## Directory structure
 
 ```bash
 ...
-│── apps
-│   └── client
-│   └── admin
-│   └── storybook
+client
+│── app
+│   └── (root)
+│   └── (community)
+│   └── (auth)
 │
-│── packages
-│   └── types
+│── components
+│   └── ui
+│   └── provide
+│
+│── types
+│── libs
+│── public
+│   └── font
+│   └── image
+│
 ...
 ```
 
@@ -44,3 +55,5 @@ $ pnpm client dev
 ```
 
 ## Rule
+
+### [규정서 참고](https://linear.app/srh-spam/document/speedat-규정서-63e258bc3544)
