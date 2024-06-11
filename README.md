@@ -57,3 +57,15 @@ client
 ## Rule
 
 ### [규정서 참고](https://linear.app/srh-spam/document/speedat-규정서-63e258bc3544)
+
+## 작업전 유의!
+
+1. 작업하고자 하는 기능의 브렌치로 이동
+2. branch > Choose a branch to merge into 브렌치 이름
+3. develop 선택 (develop에 있는 최신 개발 내용을 기능의 브렌치로 가져오는것)
+4. 작업 진행
+5. commit (이름은 되도록 "[commit 유형] commit 제목" 형식에 맞춰서 작성)
+6. push
+7. 기능이 완성되었다면 Preview Pull Request / Create Pull Request (ctrl + alt + p / ctrl + r)
+8. develop에 적당한 메세지와 함께 merge
+9. 컨플릭 등 예외사항시 사수에게 알리기
