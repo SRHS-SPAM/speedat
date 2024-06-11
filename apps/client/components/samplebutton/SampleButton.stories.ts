@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { SampleButton } from "./SampleButton";
+import { SampleButton } from "./sampleButton";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/Button",
+  title: "Example/sampelButton",
   component: SampleButton,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -27,26 +27,26 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: "Button",
+    label: "sampleButton",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Button",
+    label: "sampleButton",
   },
 };
 
 export const Large: Story = {
   args: {
     size: "large",
-    label: "Button",
+    label: "sampleButton",
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
-    label: "Button",
+    label: "sampleButton",
   },
 };
