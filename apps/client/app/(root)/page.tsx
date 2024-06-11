@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <div className="h-[100vh]"></div>
+      <div className="h-[99vh]"></div>
       {/* <Navbar /> */}
     </>
   );
