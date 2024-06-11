@@ -68,4 +68,4 @@ client
 6. push
 7. 기능이 완성되었다면 Preview Pull Request / Create Pull Request (ctrl + alt + p / ctrl + r)
 8. develop에 적당한 메세지와 함께 merge
-9. 컨플릭 등 예외사항시 사수에게 알리기
+9. conflict 등 예외사항시 사수에게 알리기
