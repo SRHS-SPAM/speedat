@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Plus } from "lucide-react";
-import EventItem from "../../_components/eventItem";
+import EventItem from "./_components/eventItem";
 import Calender from "./_components/calendar";
-import { Data } from "./data";
+import { Data } from "./_data/datas";
 
 export default function Home() {
   const [ymd, setYmd] = useState([2024, 1, 1]);
