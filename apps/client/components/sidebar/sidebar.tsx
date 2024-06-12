@@ -9,7 +9,7 @@ const barList = ["커뮤니티", "급식표", "시간표", "달력"];
 const Sidebar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <div className="mt-[79px] w-[240px] h-[849px] bg-white dark:bg-zinc-900 flex flex-col justify-between">
+    <div className="fixed top-0 mt-[79px] w-[240px] h-[calc(100vh-79px)] bg-white dark:bg-zinc-900 flex flex-col justify-between z-20">
       <div>
         <div className="w-full h-[48px] bg-yellow-100 flex items-center cursor-pointer">
           <div className="ml-[12px] gap-[8px] flex flex-row font-bold text-lg ">

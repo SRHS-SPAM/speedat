@@ -1,5 +1,9 @@
-import Navbar from "../../components/nav/navbar";
-
 export default function Home() {
-  return <>{/* <Navbar /> */}</>;
+  return (
+    <>
+      <div className="h-[99vh]"></div>
+      {/* <Navbar /> */}
+    </>
+  );
 }
+//임시 높이 100vh

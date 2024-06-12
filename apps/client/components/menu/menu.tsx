@@ -12,32 +12,22 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Bell,
-  Calendar,
-  LogIn,
-  LogOut,
-  MenuIcon,
-  MessagesSquareIcon,
-  User,
-} from "lucide-react";
-import { signOut, useSession } from "next-auth/react";
+import { Bell, Calendar, LogIn, LogOut, MenuIcon, MessagesSquareIcon, User } from "lucide-react";
+// import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 const Menu = () => {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   return (
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant={"ghost"} size={"menu"}>
+          {/* <Button variant={"ghost"} size={"menu"}>
             <MenuIcon size={28} />
-          </Button>
+          </Button> */}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56 mr-2">
-          <DropdownMenuLabel>
-            {session ? session.user.name : "Menu"}
-          </DropdownMenuLabel>
+          <DropdownMenuLabel>{/* {session ? session.user.name : "Menu"} */}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
@@ -61,7 +51,7 @@ const Menu = () => {
               </DropdownMenuItem>
             </Link>
             <DropdownMenuSeparator />
-            {session ? (
+            {/* {session ? (
               <DropdownMenuItem onClick={() => signOut()}>
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
@@ -73,7 +63,7 @@ const Menu = () => {
                   <span>Log in</span>
                 </DropdownMenuItem>
               </Link>
-            )}
+            )} */}
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

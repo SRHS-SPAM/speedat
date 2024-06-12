@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Plus } from "lucide-react";
-import EventItem from "../../_components/eventItem";
+import EventItem from "./_components/eventItem";
 import Calender from "./_components/calendar";
 import { Data } from "./_data/datas";
 
