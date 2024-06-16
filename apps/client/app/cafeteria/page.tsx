@@ -1,4 +1,4 @@
-"use client"
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useSearchParams } from "next/navigation";
@@ -8,49 +8,21 @@ export interface CafeMenuPaneProps {
   title: string
   data: string[]
 }
-const Data:CafeMenuPaneProps[] = [
-  {
-    title: "조식",
-    data: [
-      "배추김치",
-      "수수밥",
-      "북어계란국",
-      "오복치",
-      "고구마맛탕"
-    ]
-  },
-  {
-    title: "중식",
-    data: [
-      "배추김치",
-      "수수밥",
-      "북어계란국",
-      "오복치",
-      "고구마맛탕"
-    ]
-  },
-  {
-    title: "석식",
-    data: [
-      "배추김치",
-      "수수밥",
-      "북어계란국",
-      "오복치",
-      "고구마맛탕"
-    ]
-  },
-]
 
 export default function Home() {
-  const params = useSearchParams();
   const currentDate = new Date();
-  const year = parseInt(params.get("year") || currentDate.getFullYear().toString() );
-  const month = parseInt(params.get("month") || currentDate.getMonth().toString() );
-  const date = parseInt(params.get("date") || currentDate.getDate().toString() );
+  const year = currentDate.getFullYear()
+  const month =  currentDate.getMonth()
+  const date =  currentDate.getDate()
   return (
-    <main className="px-10">
-      <div className="flex flex-col">
-        <CafeMenu data={Data}/>
+    <main className="mx-auto">
+      <div className="flex flex-col w-[1000px] items-center">
+      <span className="text-xl font-semibold w-full mb-1">
+          오늘의 급식
+        </span><span className="font-semibold text-gray-500 w-full mb-12">
+          {year}년 {month+1}월 {date}일
+        </span>
+        <CafeMenu />
       </div>
     </main>
   );
