@@ -6,23 +6,23 @@ import { useState, useRef, useEffect } from "react";
 const CafeMenu = async () => {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
-  const month = (currentDate.getMonth()+1);
-  const date = 18;
+  const month = currentDate.getMonth()+1;
+  const date = currentDate.getDate();
 
   const data = [{
-    data: await fetch(`http://localhost:3000/openApi/api/mealData/0/${year *10000 + month *100+ date}`, {
+    data: await fetch(`http://localhost:3000/openApi/api/mealData/1/${year *10000 + month *100+ date}`, {
       cache: "no-store",
       method: "GET",
     }).then((r) => r.json()).then((r)=>( r.error ? ["급식 정보가 없습니다."] : r )),
     title: "조식",
   }, {
-    data: await fetch(`http://localhost:3000/openApi/api/mealData/1/${year *10000 + month *100+ date}`, {
+    data: await fetch(`http://localhost:3000/openApi/api/mealData/2/${year *10000 + month *100+ date}`, {
       cache: "no-store",
       method: "GET",
     }).then((r) => r.json()).then((r)=>( r.error ? ["급식 정보가 없습니다."] : r )),
     title: "중식",
   }, {
-    data: await fetch(`http://localhost:3000/openApi/api/mealData/2/${year *10000 + month *100+ date}`, {
+    data: await fetch(`http://localhost:3000/openApi/api/mealData/3/${year *10000 + month *100+ date}`, {
       cache: "no-store",
       method: "GET",
     }).then((r) => r.json()).then((r)=>( r.error ? ["급식 정보가 없습니다."] : r )),

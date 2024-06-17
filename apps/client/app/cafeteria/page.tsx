@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import CafeMenu from "./_components/cafeMenu";
+import CafeMenuAll from "./_components/cafeMenuAll";
 export interface CafeMenuPaneProps {
   title: string
   data: string[]
@@ -15,7 +16,7 @@ export default function Home() {
   const month =  currentDate.getMonth()
   const date =  currentDate.getDate()
   return (
-    <main className="mx-auto">
+    <main className="mx-auto mt-20">
       <div className="flex flex-col w-[1000px] items-center">
       <span className="text-xl font-semibold w-full mb-1">
           오늘의 급식
@@ -23,6 +24,7 @@ export default function Home() {
           {year}년 {month+1}월 {date}일
         </span>
         <CafeMenu />
+        <CafeMenuAll />
       </div>
     </main>
   );
