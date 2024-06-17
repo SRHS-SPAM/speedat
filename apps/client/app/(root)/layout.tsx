@@ -7,14 +7,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <Header />
-      <div className="flex flex-row justify-start">
-        <Sidebar />
-        <main className="w-full ml-[240px] mt-[79px]"> {children}</main>
-      </div>
-      <Footer />
-    </>
-  );
+  return <>{children}</>;
 }
