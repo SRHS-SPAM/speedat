@@ -16,16 +16,16 @@ export default function Home() {
   const month =  currentDate.getMonth()
   const date =  currentDate.getDate()
   return (
-    <main className="mx-auto mt-20">
-      <div className="flex flex-col w-[1000px] items-center">
-      <span className="text-xl font-semibold w-full mb-1">
+      <main className="flex flex-col w-full items-center mt-20">
+        <div className="flex flex-col w-[1000px]">
+      <span className="text-3xl font-semibold w-full mb-1">
           오늘의 급식
-        </span><span className="font-semibold text-gray-500 w-full mb-12">
+        </span><span className="font-semibold text-2xl text-gray-500 w-full mb-12">
           {year}년 {month+1}월 {date}일
         </span>
         <CafeMenu />
+        </div>
         <CafeMenuAll />
-      </div>
-    </main>
+      </main>
   );
 }

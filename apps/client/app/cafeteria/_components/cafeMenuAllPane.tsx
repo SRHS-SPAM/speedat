@@ -8,7 +8,6 @@ interface CafeMenuAllPaneProps {
     menu: number
 }
 const CafeMenuAllPane = ({date, mon, menu}:CafeMenuAllPaneProps) => {
-    console.log(menu)
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = (currentDate.getMonth()+(mon=="pre"?0:mon=="cur"?1:2))%12;

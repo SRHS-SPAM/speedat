@@ -9,7 +9,7 @@ const CafeMenuPane = ({ title, data }: CafeMenuPaneProps) => {
       <span className="py-3 text-2xl font-bold">{title}</span>
       <div className="flex-1 flex flex-col p-12 justify-around">
         {data.map((ai, i) => (
-          <div key={i} className="font-bold w-full text-left">
+          <div key={i} className="font-bold text-lg w-full text-left">
             {ai}
           </div>
         ))}
