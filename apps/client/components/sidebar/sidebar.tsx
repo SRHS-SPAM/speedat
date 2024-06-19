@@ -1,6 +1,16 @@
 "use client";
 
-import { Home, Globe, Coffee, Clock, Calendar, Github, Instagram, Settings } from "lucide-react";
+import {
+  Home,
+  Globe,
+  Coffee,
+  Clock,
+  Calendar,
+  Github,
+  Instagram,
+  Settings,
+  User,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -32,17 +42,14 @@ const Sidebar = () => {
             외부 링크
           </div>
           <div className="w-full h-[48px] ml-[12px] gap-[8px] flex items-center flex-row font-bold text-lg text-gray-600 dark:text-gray-300 cursor-pointer">
-            <Instagram />
-            인스타그램
+            <User />
+            마이페이지
           </div>
           <div className="w-full h-[48px] ml-[12px] gap-[8px] flex items-center flex-row font-bold text-lg text-gray-600 dark:text-gray-300 cursor-pointer">
-            <Github />
-            깃허브
+            <Settings />
+            설정
           </div>
         </div>
-      </div>
-      <div className="w-full h-[48px] ml-[12px] gap-[8px] flex items-center flex-row font-bold text-lg text-gray-600 dark:text-gray-300 cursor-pointer">
-        <Settings />앱 세팅
       </div>
     </div>
   );
