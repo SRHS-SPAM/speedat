@@ -33,8 +33,14 @@ const MainTab = () => {
             </div>
           ))}
         </div>
-        <div className="w-full flex justify-end">
-          <div className="px-[22px] w-[436px] h-[48px] rounded-[10px] border flex flex-row border-gray-400 items-center justify-between mt-[48px]">
+        <div className="w-full flex justify-between mt-[48px]">
+          <div className="h-[48px] flex flex-row items-center ">
+            <img src="/communityWriteButton.svg" className="cursor-pointer w-[48px] h-[48px]"></img>
+            <div className="ml-[24px] text-zinc-900 text-2xl font-['Pretendard'] font-bold">
+              당신만의 글을 작성해보세요!
+            </div>
+          </div>
+          <div className="px-[22px] w-[436px] h-[48px] rounded-[10px] border flex flex-row border-gray-400 items-center justify-between">
             <input
               className="flex-grow px-2 py-1 outline-none"
               placeholder="태그 혹은 제목을 입력해주세요"
