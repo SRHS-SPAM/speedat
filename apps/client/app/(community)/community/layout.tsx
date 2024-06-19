@@ -7,10 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <div className="flex flex-row justify-start">
-        <Sidebar />
-        <main className="mt-[79px] w-full ml-[240px]"> {children}</main>
-      </div>
+      <div className="flex flex-row justify-start">{children}</div>
     </>
   );
 }
