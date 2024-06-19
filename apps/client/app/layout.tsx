@@ -25,7 +25,9 @@ export default function RootLayout({
           <Sidebar />
           <main className="w-full ml-[240px] mt-[79px]"> {children}</main>
         </div>
-        <Footer />
+        <div className="ml-[240px]">
+          <Footer />
+        </div>
       </body>
     </html>
   );
