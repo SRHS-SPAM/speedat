@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed top-0 w-full min-w-[433px] h-[79px] px-[35px] py-2 dark:bg-zinc-900 bg-white justify-between items-center inline-flex z-[9999]">
+      <div className="fixed top-0 w-full min-w-[433px] h-[79px] px-[35px] py-2 dark:bg-zinc-900 bg-white justify-between items-center inline-flex z-[9999] border-b border-gray-400">
         <Link href="/">
           <Image
             src="/speedat.svg"
@@ -34,7 +34,7 @@ const Header = () => {
           <div className="flex items-center gap-6">
             {NavList.map((arg, i) => (
               <div
-                className="w-14 h-14 flex items-center justify-center dark:text-white text-zinc-900 cursor-pointer"
+                className="w-[36px] h-[36px] flex items-center justify-center dark:text-white text-zinc-900 cursor-pointer rounded shadow"
                 key={i}>
                 {arg}
               </div>
