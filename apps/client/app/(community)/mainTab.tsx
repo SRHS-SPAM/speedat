@@ -3,6 +3,7 @@ import { Search, Eye, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 import CommunityHome from "./communityHome";
 import BestTab from "./communityBest";
+import SystemTab from "./systemTab";
 
 const tab = ["커뮤니티 홈", "인기 글", "설계과", "제어과", "시스템", "군특성화"];
 const MainTab = () => {
@@ -13,6 +14,8 @@ const MainTab = () => {
         return <CommunityHome />;
       case 1:
         return <BestTab />;
+      case 4:
+        return <SystemTab />;
       default:
         return null;
     }
