@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Footer from "./footer";
+import Sidebar from "./sidebar";
 
 const meta = {
-  component: Footer,
-  args: {
-    isDark: false,
-  },
-} satisfies Meta<typeof Footer>;
+  component: Sidebar,
+} satisfies Meta<typeof Sidebar>;
 
 export default meta;
 
