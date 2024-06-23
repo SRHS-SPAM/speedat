@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-export interface HeaderInputProps {
-  isDark: boolean;
+export interface FooterInputProps {
+  isDark?: boolean;
 }
-const Footer = ({ isDark }: HeaderInputProps) => {
+const Footer = ({ isDark = false }: FooterInputProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false); //다크모드 관리용
   return (
     <div

@@ -4,6 +4,9 @@ import Sidebar from "./sidebar";
 
 const meta = {
   component: Sidebar,
+  args: {
+    isDark: false,
+  },
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
