@@ -7,11 +7,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 export interface HeaderInputProps {
-  isDark: boolean;
-  isLog: boolean;
+  isDark?: boolean;
+  isLog?: boolean;
 }
 
-const Header = ({ isDark, isLog }: HeaderInputProps) => {
+const Header = ({ isDark = false, isLog = false }: HeaderInputProps) => {
   const [isLogIn, setIsLogIn] = useState(false); //로그인 여부 확인용
   const NavList = [
     <UserRound key={1} size={28} />,
