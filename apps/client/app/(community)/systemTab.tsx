@@ -1,11 +1,5 @@
-import {
-  Eye,
-  ThumbsUp,
-  ChevronsLeft,
-  ChevronLeft,
-  ChevronsRight,
-  ChevronRight,
-} from "lucide-react";
+import Post from "@/components/community/post";
+import { ChevronsLeft, ChevronLeft, ChevronsRight, ChevronRight } from "lucide-react";
 import { useState } from "react";
 const list = [
   ["Title 어쩌구 저쩌구", "Discription 어쩌구 저쩌구", "시스템과 게시판", "30", "56", "12"],
@@ -50,27 +44,7 @@ const SystemTab = () => {
           </div>
         </div>
         {list.map((arg, i) => (
-          <div className="w-full h-[124px] rounded-[10px] shadow mb-[12px] flex flex-row px-[22px] py-[12px] justify-between">
-            <div className="flex flex-col justify-between">
-              <div>
-                <div className="text-gray-700 text-xl font-bold">{list[i][0]}</div>
-                <div className="text-gray-600 text-xs mt-[9px]">{list[i][1]}</div>
-              </div>
-              <div className="gap-[18px] flex flex-row">
-                <div className="text-gray-600 text-xs">{list[i][2]}</div>
-                <div className="text-gray-600 text-xs font-['Pretendard']">{list[i][3]}분 전</div>
-                <div className="flex flex-row gap-[8px]">
-                  <Eye size={15} />
-                  <div className="text-gray-600 text-xs font-['Pretendard']">{list[i][4]}</div>
-                </div>
-                <div className="flex flex-row gap-[8px]">
-                  <ThumbsUp size={15} />
-                  <div className="text-gray-600 text-xs font-['Pretendard']">{list[i][5]}</div>
-                </div>
-              </div>
-            </div>
-            <img src={"http://via.placeholder.com/100x100"} alt="" />
-          </div>
+          <Post list={arg} key={i}></Post>
         ))}
         <div className="flex flex-row items-center flex-1 justify-center mb-[96px]">
           <div className=" text-[#FFB700] cursor-pointer" onClick={() => setNum(0)}>
@@ -87,7 +61,8 @@ const SystemTab = () => {
                     ? "w-[32px] h-[32px] text-[24px] cursor-pointer"
                     : "w-[32px] h-[32px] text-[24px] text-[#6b7280] cursor-pointer"
                 }
-                onClick={() => setNum(i)}>
+                onClick={() => setNum(i)}
+                key={i}>
                 {i + 1}
               </div>
             ))}
