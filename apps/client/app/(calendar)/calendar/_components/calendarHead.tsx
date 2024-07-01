@@ -26,7 +26,7 @@ const CalendarHead = ({
       <div className="flex justify-between items-center w-full">
         <div
           onClick={issetable ? wrapChange : () => {}}
-          className="text-3xl font-bold cursor-pointer">
+          className="text-center text-zinc-900 text-xs font-semibold font-['Pretendard'] leading-[14.40px] cursor-pointer">
           {title}
           {}
         </div>
