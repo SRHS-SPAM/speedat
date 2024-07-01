@@ -47,12 +47,12 @@ const CalendarYear = ({
       {Years.map((ai, i) => (
         <div
           key={i}
-          className="text-center text-black text-xl font-normal items-center h-full w-full flex justify-stretch">
+          className="text-center text-black text-xs font-normal items-center h-full w-full flex justify-stretch">
           {ai.map((aj, j) => (
             <div key={j} className="flex items-center justify-center h-full w-full">
               <div
                 className={cn(
-                  "cursor-pointer select-none hover:bg-yellow-200 w-[100px] h-[100px] flex items-center justify-center rounded-full ",
+                  "cursor-pointer select-none hover:bg-yellow-200 w-[30px] h-[30px] flex items-center justify-center rounded-full ",
                   (isgray || aj.mon != "cur") && "text-gray-300",
                   aj.date == nowy && "bg-yellow-300",
                   !isgray && aj.date == year && "hover:bg-yellow-300 border-yellow-300 border-4",

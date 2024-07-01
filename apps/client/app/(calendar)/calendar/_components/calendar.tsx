@@ -108,7 +108,7 @@ const Calender = ({ ymd, setymd }: CalendarProps) => {
   };
 
   return (
-    <div className="h-full w-full p-8 flex flex-col items-start">
+    <div className="flex flex-col items-start w-full h-full">
       <CalendarHead
         fadeymd={fadeymd}
         isequal={nowy == year && nowm == month && nowd == date}
