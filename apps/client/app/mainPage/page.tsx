@@ -29,6 +29,7 @@ const mainPage = () => {
           className="dark:invert cursor-pointer"
           width={432}
           height={450}
+          priority
         />
       </div>
       <div className="flex-col justify-start items-end gap-32 flex">
@@ -38,11 +39,10 @@ const mainPage = () => {
             <div className="grow shrink basis-0 h-[545px] shadow flex-col justify-start items-start inline-flex rounded-xl">
               <Image
                 src="/images/mainPage/Calender.jpg"
-                alt="main1"
+                alt="Calender"
                 className="dark:invert cursor-pointer rounded-t-xl"
                 width={419}
                 height={299}
-                priority
               />
 
               <div className="pb-7 bg-white rounded-bl-[10px] rounded-br-[10px] flex-col justify-start items-center gap-[17px] flex w-[100%]">
@@ -55,7 +55,7 @@ const mainPage = () => {
                   </div>
                 </div>
                 <div className="w-[371px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                  <div className="grow shrink basis-0 h-6 text-center text-zinc-900 text-sm font-semibold font-pre leading-[16.80px]">
+                  <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                     달력 바로가기
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const mainPage = () => {
                     </div>
                     <Image
                       src="/images/mainPage/source1.png"
-                      alt="main1"
+                      alt="source1"
                       className="dark:invert cursor-pointer "
                       width={100}
                       height={100}
@@ -158,7 +158,7 @@ const mainPage = () => {
                     </div>
                     <Image
                       src="/images/mainPage/source2.png"
-                      alt="main1"
+                      alt="source2"
                       className="dark:invert cursor-pointer "
                       width={100}
                       height={100}
@@ -201,7 +201,7 @@ const mainPage = () => {
                     </div>
                     <Image
                       src="/images/mainPage/source3.png"
-                      alt="main1"
+                      alt="source3"
                       className="dark:invert cursor-pointer "
                       width={100}
                       height={100}
@@ -211,7 +211,7 @@ const mainPage = () => {
               </div>
             </div>
             <div className="w-80 h-12 px-3 py-2 bg-yellow-500 rounded justify-start items-center gap-1 inline-flex">
-              <div className="grow shrink basis-0 h-6 text-center text-zinc-900 text-sm font-semibold font-pre leading-[16.80px]">
+              <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                 커뮤니티 바로가기
               </div>
             </div>
@@ -224,30 +224,39 @@ const mainPage = () => {
             </div>
           </div>
           <div className="justify-start items-start gap-5 inline-flex">
-            <div className="w-[326px] h-[474px] shadow flex-col justify-start items-start inline-flex">
-              <img
-                className="w-[326px] h-[228px] relative rounded-tl-[10px] rounded-tr-[10px]"
-                src="https://via.placeholder.com/326x228"
+            <div className="w-[326px] h-[474px] shadow flex-col justify-start items-start inline-flex rounded-[10px]">
+              <Image
+                src="/images/mainPage/menu1.png"
+                alt="menu1"
+                className="dark:invert cursor-pointer rounded-t-[10px]"
+                width={326}
+                height={228}
               />
               <div className="self-stretch h-[246px] bg-white rounded-bl-[10px] rounded-br-[10px] flex-col justify-center items-center gap-2.5 flex">
                 <div className="w-[326px] h-[246px] px-6 py-12 flex-col justify-start items-center gap-[72px] flex">
-                  <div className="self-stretch h-[19px] flex-col justify-start items-start gap-3 flex">
+                  <div className="self-stretch h-[55px] flex-col justify-start items-start gap-3 flex">
+                    <div className="self-stretch text-zinc-900 text-xl font-bold font-pre leading-normal">
+                      하루의 시작을 알리는 식사!
+                    </div>
                     <div className="self-stretch text-gray-500 text-base font-medium font-pre leading-tight">
                       급식에서 조식을 확인하세요!
                     </div>
                   </div>
                   <div className="w-[278px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                    <div className="grow shrink basis-0 h-6 text-center text-zinc-900 text-sm font-semibold font-pre leading-[16.80px]">
+                    <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                       조식 바로가기
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-[326px] h-[474px] shadow flex-col justify-start items-start inline-flex">
-              <img
-                className="w-[326px] h-[228px] relative rounded-tl-[10px] rounded-tr-[10px]"
-                src="https://via.placeholder.com/326x228"
+            <div className="w-[326px] h-[474px] shadow flex-col justify-start items-start inline-flex rounded-[10px]">
+              <Image
+                src="/images/mainPage/menu2.png"
+                alt="menu2"
+                className="dark:invert cursor-pointer rounded-t-[10px]"
+                width={326}
+                height={228}
               />
               <div className="self-stretch h-[246px] bg-white rounded-bl-[10px] rounded-br-[10px] flex-col justify-center items-center gap-2.5 flex">
                 <div className="w-[326px] h-[246px] px-6 py-12 flex-col justify-start items-center gap-[72px] flex">
@@ -260,17 +269,20 @@ const mainPage = () => {
                     </div>
                   </div>
                   <div className="w-[278px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                    <div className="grow shrink basis-0 h-6 text-center text-zinc-900 text-sm font-semibold font-pre leading-[16.80px]">
+                    <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                       중식 바로가기
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-[326px] h-[474px] shadow flex-col justify-start items-start inline-flex">
-              <img
-                className="w-[326px] h-[228px] relative rounded-tl-[10px] rounded-tr-[10px]"
-                src="https://via.placeholder.com/326x228"
+            <div className="w-[326px] h-[474px] shadow flex-col justify-start items-start inline-flex rounded-[10px]">
+              <Image
+                src="/images/mainPage/menu3.png"
+                alt="menu3"
+                className="dark:invert cursor-pointer rounded-t-[10px]"
+                width={326}
+                height={228}
               />
               <div className="self-stretch h-[246px] bg-white rounded-bl-[10px] rounded-br-[10px] flex-col justify-center items-center gap-2.5 flex">
                 <div className="w-[326px] h-[246px] px-6 py-12 flex-col justify-start items-center gap-[72px] flex">
@@ -283,7 +295,7 @@ const mainPage = () => {
                     </div>
                   </div>
                   <div className="w-[278px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                    <div className="grow shrink basis-0 h-6 text-center text-zinc-900 text-sm font-semibold font-pre leading-[16.80px]">
+                    <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                       석식 바로가기
                     </div>
                   </div>
@@ -306,9 +318,12 @@ const mainPage = () => {
           <div className="h-[345px] bg-white rounded-[10px] shadow flex-col justify-start items-end gap-2.5 flex">
             <div className="self-stretch h-[345px] justify-start items-center inline-flex">
               <div className="w-[543px] self-stretch flex-col justify-start items-start inline-flex">
-                <img
-                  className="w-[543px] grow shrink basis-0"
-                  src="https://via.placeholder.com/543x345"
+                <Image
+                  src="/images/mainPage/timetable.png"
+                  alt="timetable"
+                  className="dark:invert cursor-pointer rounded-l-[10px]"
+                  width={543}
+                  height={345}
                 />
               </div>
               <div className="grow shrink basis-0 px-12 flex-col justify-start items-start gap-[72px] inline-flex">
@@ -321,7 +336,7 @@ const mainPage = () => {
                   </div>
                 </div>
                 <div className="self-stretch h-12 px-3 py-2 bg-yellow-500 rounded justify-start items-center gap-1 inline-flex">
-                  <div className="grow shrink basis-0 h-6 text-center text-zinc-900 text-sm font-semibold font-pre leading-[16.80px]">
+                  <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                     시간표 바로가기
                   </div>
                 </div>
