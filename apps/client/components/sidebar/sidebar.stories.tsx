@@ -11,7 +11,7 @@ const meta = {
   args: {
     isDark: false,
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;

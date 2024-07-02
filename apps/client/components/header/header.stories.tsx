@@ -8,6 +8,7 @@ const meta = {
     isDark: false,
     isLog: false,
   },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Header>;
 
 export default meta;

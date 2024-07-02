@@ -7,6 +7,7 @@ const meta = {
   args: {
     isDark: false,
   },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Footer>;
 
 export default meta;
