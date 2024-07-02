@@ -73,7 +73,7 @@ const IdPage = () => {
       </div>
       <div className="w-[100%] flex flex-row justify-center mt-[96px]">
         <div className="w-[80%]">
-          <div className="text-zinc-900 text-xl font-normal font-['Pretendard'] ">
+          <div className="text-zinc-900 text-xl font-normal font-['Pretendard'] mb-24">
             {inId.main.map((arg, i) => (
               <>
                 {arg[0] == "/" ? (
