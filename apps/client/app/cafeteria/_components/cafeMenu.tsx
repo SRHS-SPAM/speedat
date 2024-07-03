@@ -30,10 +30,34 @@ const CafeMenu = async () => {
   }, ];
 console.log(data);
   return (
+<<<<<<< Updated upstream
       <div className="flex justify-between w-full">
         {data && data.map((ai, i) => (
           <CafeMenuPane data={ai.data} title={ai.title} key={i} />
         ))}
+=======
+    <div className="flex flex-col justify-center w-full">
+      <div className="flex justify-center items-stretch mb-[90px]">
+        <div
+          className="mx-16 flex justify-center"
+          onClick={() => setSelect((select + datalen - 1) % datalen)}>
+          <ChevronLeft className="text-yellow-400 h-full cursor-pointer" width={71} height={71} />
+        </div>
+        <div className="relative w-[400px] h-[500px] overflow-hidden">
+          <div
+            className="absolute w-[1500px] flex justify-between z-[-1] transition-all"
+            ref={panewrapref}>
+            {data.map((ai, i) => (
+              <CafeMenuPane data={ai.data} title={ai.title} key={i} />
+            ))}
+          </div>
+        </div>
+        <div
+          className="mx-16 flex justify-center"
+          onClick={() => setSelect((select + datalen + 1) % datalen)}>
+          <ChevronRight className="text-yellow-400 h-full cursor-pointer" width={71} height={71} />
+        </div>
+>>>>>>> Stashed changes
       </div>
   );
 };
