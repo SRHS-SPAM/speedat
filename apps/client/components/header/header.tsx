@@ -25,7 +25,7 @@ const Header = ({ isDark = false, isLog = false }: HeaderInputProps) => {
         className={`fixed top-0 w-full min-w-[433px] h-[79px] px-[35px] py-2 dark:bg-zinc-900 ${isDark ? "bg-zinc-900" : "bg-white"} justify-between items-center inline-flex z-[9999] border-b border-gray-400`}>
         <Link href="/">
           <Image
-            src="/speedat.svg"
+            src="/images/publicImg/speedat.svg"
             alt="Speedat Logo"
             className="dark:invert cursor-pointer"
             width={158}
