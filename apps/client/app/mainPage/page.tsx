@@ -9,7 +9,7 @@ const mainPage = () => {
       <div className="w-[1020px] justify-start items-center gap-7 inline-flex">
         <div className="flex-col justify-start items-start gap-8 inline-flex">
           <div>
-            <span className="text-zinc-900 text-[64px] font-bold font-pre leading-[76.80px]">
+            <span className="text-zinc-900 text-[56px] font-bold font-pre leading-[76.80px]">
               서울로봇고등학교
               <br />
               커뮤니티 & 웹사이트
