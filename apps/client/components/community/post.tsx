@@ -2,6 +2,7 @@ interface PostInputProps {
   list: Array<string>;
 }
 //list 순서:["이름", "미리보기", "()과 게시판", "인기순위 (없으면 0)", "(몇분 전인지)", "조회수", "좋아요 수"] #전부 str형으로
+//["Title 어쩌구 저쩌구", "Discription 어쩌구 저쩌구", "시스템과 게시판", "2", "30", "56", "12"]
 import { Eye, ThumbsUp } from "lucide-react";
 const Post = ({ list }: PostInputProps) => {
   const setColor = (num: number) => {
