@@ -37,17 +37,17 @@ const getWeekDates = () => {
 async function fetchData(grade: any, classes: any) {
   const today = new Date();
   try {
-    let response;
+    let response = [];
     let dayss = getWeekDates();
-
-    response = await dayss.map(async (ai, i) => {
-      await fetch(`http://localhost:3000/openApi/api/timeData/${grade}/${classes}/${ai}`, {
+    response = await Promise.all(dayss.map(async (ai, i) => {
+      return await fetch(`http://localhost:3000/openApi/api/timeData/${grade}/${classes}/${ai}`, {
         method: "GET",
       })
         .then((r) => r.json())
-        .then((r) => r.subjects);
-    });
-    console.log(dayss);
+        .then((r) => r.subjects)
+    }
+    ));
+    console.log(response);
     if (response) {
       return response;
     } else {
@@ -63,9 +63,9 @@ async function fetchData(grade: any, classes: any) {
 const TimeTablePage = async ({
   searchParams,
 }: {
-  searchParams: { grade: string; class: string };
+  searchParams: { grade: string | undefined; class: string | undefined };
 }) => {
-  const result = await fetchData(searchParams.grade, searchParams.class);
+  const result = await fetchData(searchParams.grade===undefined?1:searchParams.grade, searchParams.class===undefined?1:searchParams.class);
   return (
     <div className="w-[1200px] h-screen mb-[119px] flex justify-center items-center">
       <div className="w-[1040px] h-[613px] ">
