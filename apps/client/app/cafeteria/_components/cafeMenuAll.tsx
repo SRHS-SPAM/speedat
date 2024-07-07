@@ -46,13 +46,13 @@ const CafeMenuAll = () => {
   }
   return (
     <>
-      <div className="mt-32 w-[900px]">
+      <div className="mt-32 w-[100px] sm:w-[300px] md:w-[500px] lg:w-[700px] xl:w-[900px] ">
         <div className="flex justify-stretch w-full h-[40px] mb-8">
           {sick.map((ai, i) => (
             <div
               key={i}
               className={cn(
-                "w-1/3 border-[0.5px] flex items-center justify-center bg-neutral-100 font-semibold cursor-pointer",
+                "w-full border-[0.5px] flex items-center justify-center bg-neutral-100 font-semibold cursor-pointer",
                 i + 1 == selected && "bg-white",
               )}
               onClick={() => {
@@ -62,7 +62,7 @@ const CafeMenuAll = () => {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-5 w-full gap-[1px] p-[1px] bg-neutral-800">
+        <div className="grid grid-cols-5 w-full gap-[1px] p-[1px] bg-neutral-800 ">
           {["월", "화", "수", "목", "금"].map((ai, i) => {
             return (
               <div
