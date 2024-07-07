@@ -22,7 +22,9 @@ const CalendarDateWrap = ({ ymd, isMoving, moveymd, setymd, wrapRef }: CalendarM
     <div className="flex flex-col w-1/2 h-full">
       <div className="text-center w-full bg-white flex justify-stretch">
         {Day.map((ai, i) => (
-          <div key={i} className="w-full select-none">
+          <div
+            key={i}
+            className="w-full mb-[24px] select-none h-4 text-center text-zinc-900 text-xs font-semibold font-['Pretendard'] leading-[14.40px]">
             {ai}
           </div>
         ))}

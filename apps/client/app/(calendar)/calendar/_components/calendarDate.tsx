@@ -77,17 +77,13 @@ const CalendarDate = ({
               }}>
               <div
                 className={cn(
-                  "select-none hover:bg-yellow-200 w-[60px] h-[60px] flex items-center justify-center rounded-full ",
+                  "select-none hover:text-yellow-200 w-4 h-4 flex items-center justify-center text-center text-zinc-900 text-xs font-semibold font-['Pretendard'] leading-[14.40px]",
                   (isgray || aj.mon != "cur") && "text-gray-300",
-                  aj.mon == "cur" &&
-                    aj.date == nowd &&
-                    month == nowm &&
-                    year == nowy &&
-                    "bg-yellow-300",
+                  aj.mon == "cur" && aj.date == nowd && month == nowm && year == nowy,
                   !isgray &&
                     aj.mon == "cur" &&
                     aj.date == date &&
-                    "hover:bg-yellow-300 border-yellow-300 border-2",
+                    "hover:text-yellow-500 text-yellow-500 ",
                 )}>
                 {aj.date}
               </div>

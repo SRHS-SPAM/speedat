@@ -1,5 +1,3 @@
-// import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
 import Sidebar from "@/components/sidebar/sidebar";
 
 export default function RootLayout({
@@ -7,5 +5,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <>
+      <div className="flex flex-row justify-start">{children}</div>
+    </>
+  );
 }

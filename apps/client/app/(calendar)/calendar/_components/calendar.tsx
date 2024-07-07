@@ -9,7 +9,7 @@ import { MoveYmdProps } from "../_data/calendarType";
 import { Month } from "../_data/datas";
 
 interface CalendarProps {
-  ymd: number[];
+  ymd?: number[];
   setymd?: Dispatch<SetStateAction<number[]>>;
 }
 
@@ -18,6 +18,9 @@ const Calender = ({ ymd, setymd }: CalendarProps) => {
   const nowy = currentDate.getFullYear();
   const nowm = currentDate.getMonth();
   const nowd = currentDate.getDate();
+  if (ymd === undefined) {
+    ymd = [nowy, nowm, nowd];
+  }
   const year = ymd[0];
   const month = ymd[1];
   const date = ymd[2];
@@ -108,7 +111,7 @@ const Calender = ({ ymd, setymd }: CalendarProps) => {
   };
 
   return (
-    <div className="h-full w-full p-8 flex flex-col items-start">
+    <div className="flex flex-col items-start w-full h-full">
       <CalendarHead
         fadeymd={fadeymd}
         isequal={nowy == year && nowm == month && nowd == date}

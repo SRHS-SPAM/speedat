@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import CafeMenuAllPane from "./cafeMenuAllPane";
 
-const sick = ["조식", "중식", "석식"]
+const sick = ["조식", "중식", "석식"];
 
 const CafeMenuAll = () => {
-    const [selected, setSelected] = useState(1);
-    const Dates: DatesFace[][] = [];
+  const [selected, setSelected] = useState(1);
+  const Dates: DatesFace[][] = [];
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -44,29 +44,45 @@ const CafeMenuAll = () => {
       }
     }
   }
-    return <>
-    <div className="mt-32 w-[900px]">
+  return (
+    <>
+      <div className="mt-32 w-[900px]">
         <div className="flex justify-stretch w-full h-[40px] mb-8">
-        {sick.map((ai, i)=>(
-            <div className={cn("w-full border-[0.5px] flex items-center justify-center bg-neutral-100 font-semibold cursor-pointer", i+1==selected && "bg-white")} onClick={()=>{setSelected(i+1)}}>
-                {ai}
+          {sick.map((ai, i) => (
+            <div
+              key={i}
+              className={cn(
+                "w-full border-[0.5px] flex items-center justify-center bg-neutral-100 font-semibold cursor-pointer",
+                i + 1 == selected && "bg-white",
+              )}
+              onClick={() => {
+                setSelected(i + 1);
+              }}>
+              {ai}
             </div>
-        ))}
+          ))}
         </div>
         <div className="grid grid-cols-5 w-full gap-[1px] p-[1px] bg-neutral-800">
-            {["월", "화", "수", "목", "금"].map((ai, i)=>{
-                return (<div className="bg-white w-full h-[40px] flex items-center justify-center font-semibold">
-                    {ai}
-                    </div>)
-            })}
-            {Dates.map((ai, i)=>{
-                return ai.map((aj, j)=>{
-                    if(!(j==0 || j==6)) return (<CafeMenuAllPane key={i*10+j} date={aj.date} mon={aj.mon} menu={selected}/>)
-                })      
-            })
-            }
+          {["월", "화", "수", "목", "금"].map((ai, i) => {
+            return (
+              <div
+                key={i}
+                className="bg-white w-full h-[40px] flex items-center justify-center font-semibold">
+                {ai}
+              </div>
+            );
+          })}
+          {Dates.map((ai, i) => {
+            return ai.map((aj, j) => {
+              if (!(j == 0 || j == 6))
+                return (
+                  <CafeMenuAllPane key={i * 10 + j} date={aj.date} mon={aj.mon} menu={selected} />
+                );
+            });
+          })}
         </div>
-    </div>
+      </div>
     </>
-}
+  );
+};
 export default CafeMenuAll;
