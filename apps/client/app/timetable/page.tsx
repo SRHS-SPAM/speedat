@@ -19,9 +19,55 @@ const cls = [
   ["e1", "e2", "e3", "e4", "", "e5", "e6", ""],
 ];
 
-const TimeTablePage = () => {
+const getWeekDates = () => {
+  const today = new Date();
+  const dayOfWeek = today.getDay(); // 현재 요일 (0: 일요일, 1: 월요일, ..., 6: 토요일)
+  const sunday = today.getDate() - dayOfWeek; // 해당 주의 일요일
+  const weekDates = [];
+
+  for (let i = 1; i <= 5; i++) {
+    const date = new Date(today.setDate(sunday + i));
+    const formattedDate = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(date.getDate()).padStart(2, "0")}`;
+    weekDates.push(formattedDate);
+  }
+
+  return weekDates;
+};
+
+async function fetchData(grade: any, classes: any) {
+  const today = new Date();
+  try {
+    let response;
+    let dayss = getWeekDates();
+
+    response = await dayss.map(async (ai, i) => {
+      await fetch(`http://localhost:3000/openApi/api/timeData/${grade}/${classes}/${ai}`, {
+        method: "GET",
+      })
+        .then((r) => r.json())
+        .then((r) => r.subjects);
+    });
+    console.log(dayss);
+    if (response) {
+      return response;
+    } else {
+      console.log("res.result is not an array or res is undefined");
+      return;
+    }
+  } catch (error) {
+    console.error(error);
+    return;
+  }
+}
+
+const TimeTablePage = async ({
+  searchParams,
+}: {
+  searchParams: { grade: string; class: string };
+}) => {
+  const result = await fetchData(searchParams.grade, searchParams.class);
   return (
-    <div className="w-[1200px] h-screen mt-[57px] mb-[119px] ml-[240px] flex justify-center items-center">
+    <div className="w-[1200px] h-screen mb-[119px] flex justify-center items-center">
       <div className="w-[1040px] h-[613px] ">
         <div>
           <div className="text-zinc-900 text-[32px] font-bold font-['Pretendard'] leading-[38.40px]">
@@ -66,7 +112,7 @@ const TimeTablePage = () => {
                 </div>
               ))}
             </div>
-            {cls.map((ai, i) => (
+            {result.map((ai, i) => (
               <div key={i} className="flex flex-col">
                 {ai.map((aj, j) => (
                   <div
