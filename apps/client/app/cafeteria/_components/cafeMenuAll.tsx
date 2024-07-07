@@ -52,7 +52,7 @@ const CafeMenuAll = () => {
             <div
               key={i}
               className={cn(
-                "w-full border-[0.5px] flex items-center justify-center bg-neutral-100 font-semibold cursor-pointer",
+                "w-1/3 border-[0.5px] flex items-center justify-center bg-neutral-100 font-semibold cursor-pointer",
                 i + 1 == selected && "bg-white",
               )}
               onClick={() => {
