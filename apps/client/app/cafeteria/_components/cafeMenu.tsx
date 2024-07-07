@@ -49,7 +49,7 @@ const CafeMenu = async () => {
   ];
   console.log(data);
   return (
-    <div className="flex justify-between w-full">
+    <div className="flex justify-between w-[1000px]">
       {data && data.map((ai, i) => <CafeMenuPane data={ai.data} title={ai.title} key={i} />)}
     </div>
   );
