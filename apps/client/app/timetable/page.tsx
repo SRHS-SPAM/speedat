@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const days = ["월", "화", "수", "목", "금"];
@@ -67,9 +68,13 @@ const TimeTablePage = async ({
   searchParams: { grade: string | undefined; class: string | undefined };
 }) => {
   const result = await fetchData(
-    searchParams.grade === undefined ? 1 : searchParams.grade,
-    searchParams.class === undefined ? 1 : searchParams.class,
+    searchParams.grade === undefined ? "1" : searchParams.grade,
+    searchParams.class === undefined ? "1" : searchParams.class,
   );
+  const searchGrade = searchParams.grade === undefined ? "1" : searchParams.grade;
+  const searchClass = searchParams.class === undefined ? "1" : searchParams.class;
+  const resultGrade = parseInt(searchGrade) >= 3 ? 1 : parseInt(searchGrade) + 1;
+  const resultClass = parseInt(searchClass) >= 8 ? 1 : parseInt(searchClass) + 1;
   return (
     <div className="w-full lg:w-[1200px] h-screen mb-[119px] flex justify-center items-center">
       <div className="w-full max-w-[1040px] h-[613px]">
@@ -78,7 +83,26 @@ const TimeTablePage = async ({
             2024년 1학기 시간표
           </div>
           <div className="text-gray-600 text-xl md:text-2xl lg:text-3xl font-medium font-['Pretendard'] leading-tight">
-            3학년 6반
+            <span className="text-yellow-500 underline">
+              <Link
+                href={{
+                  pathname: "/timetable",
+                  query: { grade: resultGrade, class: searchClass },
+                }}>
+                {searchGrade}
+              </Link>
+            </span>
+            <span>학년&nbsp;</span>
+            <span className="text-yellow-500 underline">
+              <Link
+                href={{
+                  pathname: "/timetable",
+                  query: { class: resultClass, grade: searchGrade },
+                }}>
+                {searchClass}
+              </Link>
+            </span>
+            <span>반</span>
           </div>
         </div>
         <div className="w-full mt-[24px] h-full">
