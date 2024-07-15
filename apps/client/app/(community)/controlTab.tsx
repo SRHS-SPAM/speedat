@@ -19,12 +19,12 @@ const list = [
 ];
 const numlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sortList = ["최신 순", "좋아요 순", "댓글 순", "조회 순"];
-const SystemTab = () => {
+const ControlTab = () => {
   const [num, setNum] = useState(0);
   const [sort, setSort] = useState(0);
   return (
     <>
-      <img src="./systemTab.svg" className="mt-5" />
+      <img src="./controlTab.svg" className="mt-5" />
       <div className="w-full gap-[12px] mt-[88px]">
         <div className="w-full h-[37px] border-b border-[#9CA3AF]  mb-[20px] flex flex-row justify-between">
           <div className="text-zinc-900 text-xl font-['Pretendard'] font-bold">시스템 게시판</div>
@@ -78,4 +78,4 @@ const SystemTab = () => {
     </>
   );
 };
-export default SystemTab;
+export default ControlTab;
