@@ -4,6 +4,9 @@ import { useState } from "react";
 import CommunityHome from "./communityHome";
 import BestTab from "./communityBest";
 import SystemTab from "./systemTab";
+import DesignTab from "./designTab";
+import ControlTab from "./controlTab";
+import MilitaryTab from "./militaryTab";
 
 const tab = ["커뮤니티 홈", "인기 글", "설계과", "제어과", "시스템", "군특성화"];
 const MainTab = () => {
@@ -14,8 +17,14 @@ const MainTab = () => {
         return <CommunityHome />;
       case 1:
         return <BestTab />;
+      case 2:
+        return <DesignTab />;
+      case 3:
+        return <ControlTab />;
       case 4:
         return <SystemTab />;
+      case 5:
+        return <MilitaryTab />;
       default:
         return null;
     }
