@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const days = ["월", "화", "수", "목", "금"];
@@ -19,30 +20,103 @@ const cls = [
   ["e1", "e2", "e3", "e4", "", "e5", "e6", ""],
 ];
 
-const TimeTablePage = () => {
+const getWeekDates = () => {
+  const today = new Date();
+  const dayOfWeek = today.getDay(); // 현재 요일 (0: 일요일, 1: 월요일, ..., 6: 토요일)
+  const sunday = today.getDate() - dayOfWeek; // 해당 주의 일요일
+  const weekDates = [];
+
+  for (let i = 1; i <= 5; i++) {
+    const date = new Date(today.setDate(sunday + i));
+    const formattedDate = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(date.getDate()).padStart(2, "0")}`;
+    weekDates.push(formattedDate);
+  }
+
+  return weekDates;
+};
+
+async function fetchData(grade: any, classes: any): Promise<string[][]> {
+  const today = new Date();
+  try {
+    let response = [];
+    let dayss = getWeekDates();
+    response = await Promise.all(
+      dayss.map(async (ai, i) => {
+        return await fetch(`http://localhost:3000/openApi/api/timeData/${grade}/${classes}/${ai}`, {
+          method: "GET",
+        })
+          .then((r) => r.json())
+          .then((r) => r.subjects);
+      }),
+    );
+    console.log(response);
+    if (response) {
+      return response;
+    } else {
+      console.log("res.result is not an array or res is undefined");
+      return cls;
+    }
+  } catch (error) {
+    console.error(error);
+    return cls;
+  }
+}
+
+const TimeTablePage = async ({
+  searchParams,
+}: {
+  searchParams: { grade: string | undefined; class: string | undefined };
+}) => {
+  const result = await fetchData(
+    searchParams.grade === undefined ? "1" : searchParams.grade,
+    searchParams.class === undefined ? "1" : searchParams.class,
+  );
+  const searchGrade = searchParams.grade === undefined ? "1" : searchParams.grade;
+  const searchClass = searchParams.class === undefined ? "1" : searchParams.class;
+  const resultGrade = parseInt(searchGrade) >= 3 ? 1 : parseInt(searchGrade) + 1;
+  const resultClass = parseInt(searchClass) >= 8 ? 1 : parseInt(searchClass) + 1;
   return (
-    <div className="w-[1200px] h-screen mt-[57px] mb-[119px] ml-[240px] flex justify-center items-center">
-      <div className="w-[1040px] h-[613px] ">
+    <div className="w-full lg:w-[1200px] h-screen mb-[119px] flex justify-center items-center">
+      <div className="w-full max-w-[1040px] h-[613px]">
         <div>
-          <div className="text-zinc-900 text-[32px] font-bold font-['Pretendard'] leading-[38.40px]">
+          <div className="text-zinc-900 text-[24px] md:text-[32px] lg:text-[48px] font-bold font-['Pretendard'] leading-tight">
             2024년 1학기 시간표
           </div>
-          <div className="text-gray-600 text-2xl font-medium font-['Pretendard'] leading-[28.80px]">
-            3학년 6반
+          <div className="text-gray-600 text-xl md:text-2xl lg:text-3xl font-medium font-['Pretendard'] leading-tight">
+            <span className="text-yellow-500 underline">
+              <Link
+                href={{
+                  pathname: "/timetable",
+                  query: { grade: resultGrade, class: searchClass },
+                }}>
+                {searchGrade}
+              </Link>
+            </span>
+            <span>학년&nbsp;</span>
+            <span className="text-yellow-500 underline">
+              <Link
+                href={{
+                  pathname: "/timetable",
+                  query: { class: resultClass, grade: searchGrade },
+                }}>
+                {searchClass}
+              </Link>
+            </span>
+            <span>반</span>
           </div>
         </div>
         <div className="w-full mt-[24px] h-full">
-          <div className=" flex flex-row">
-            <div className="w-[140px] h-10 border border-zinc-900 flex-col justify-center items-center inline-flex">
-              <div className="text-gray-700 text-lg font-semibold font-['Pretendard'] leading-snug">
+          <div className="flex flex-row">
+            <div className="w-[70px] md:w-[100px] lg:w-[140px] h-[40px] md:h-10 border border-zinc-900 flex-col justify-center items-center inline-flex">
+              <div className="text-gray-700 text-sm md:text-md lg:text-lg font-semibold font-['Pretendard'] leading-snug">
                 시간
               </div>
             </div>
             {days.map((ai, i) => (
               <div
                 key={i}
-                className="w-[180px] h-10 border border-zinc-900 flex-col justify-center items-center inline-flex">
-                <div className="text-gray-700 text-lg font-semibold font-['Pretendard'] leading-snug">
+                className="w-[70px] md:w-[100px] lg:w-[180px] h-[40px] md:h-10 border border-zinc-900 flex-col justify-center items-center inline-flex">
+                <div className="text-gray-700 text-sm md:text-md lg:text-lg font-semibold font-['Pretendard'] leading-snug">
                   {ai}
                 </div>
               </div>
@@ -53,12 +127,12 @@ const TimeTablePage = () => {
               {times.map((ai, i) => (
                 <div
                   key={i}
-                  className="w-[140px] h-[60px] pt- opacity-70 border border-gray-800 justify-center items-center inline-flex">
+                  className="w-[70px] md:w-[100px] lg:w-[140px] h-[40px] md:h-[40px] lg:h-[60px] opacity-70 border border-gray-800 justify-center items-center inline-flex">
                   <div className="self-stretch flex-col justify-start items-center gap-1 inline-flex">
                     {ai.map((aj, j) => (
                       <div
                         key={j}
-                        className="text-gray-800 text-base font-medium font-['Pretendard']">
+                        className="text-zinc-900 text-xs md:text-sm lg:text-base font-medium font-['Pretendard']">
                         {aj}
                       </div>
                     ))}
@@ -66,13 +140,13 @@ const TimeTablePage = () => {
                 </div>
               ))}
             </div>
-            {cls.map((ai, i) => (
+            {result.map((ai, i) => (
               <div key={i} className="flex flex-col">
                 {ai.map((aj, j) => (
                   <div
                     key={j}
-                    className="w-[180px] h-[60px] px-[55px] pt-5 pb-[21px] opacity-70 border border-zinc-900 justify-center items-center inline-flex">
-                    <div className="text-zinc-900 text-base font-medium font-['Pretendard']">
+                    className="w-[70px] md:w-[100px] lg:w-[180px] h-[40px] md:h-[40px] lg:h-[60px] opacity-70 border border-zinc-900 justify-center items-center inline-flex">
+                    <div className="text-zinc-900 text-xs md:text-sm lg:text-base font-medium font-['Pretendard']">
                       {aj}
                     </div>
                   </div>
@@ -85,4 +159,5 @@ const TimeTablePage = () => {
     </div>
   );
 };
+
 export default TimeTablePage;
