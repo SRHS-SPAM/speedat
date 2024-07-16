@@ -5,7 +5,7 @@ interface CafeMenuPaneProps {
 
 const CafeMenuPane = ({ title, data }: CafeMenuPaneProps) => {
   return (
-    <div className="flex flex-col items-center text-center bg-white rounded-sm shadow-lg w-[276px] h-[375px]">
+    <div className="flex flex-col items-center text-center bg-white rounded-sm shadow-lg w-[276px] h-[375px] ">
       <span className="py-3 text-2xl font-bold">{title}</span>
       <div className="flex-1 flex flex-col p-12 justify-around">
         {data.map((ai, i) => (
