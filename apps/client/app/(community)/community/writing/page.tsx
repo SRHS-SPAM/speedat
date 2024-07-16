@@ -1,6 +1,9 @@
 "use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState, ChangeEvent } from "react";
 const Write = () => {
+  const router = useRouter();
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [files, setFiles] = useState<File[]>([]);
@@ -54,7 +57,7 @@ const Write = () => {
           className="w-full h-full border border-gray-500 outline-none mb-8"
           onChange={(e) => setContent(e.target.value)}></textarea>
         <div className="w-full gap-12 flex flex-row justify-end">
-          <button className="w-[116px] h-10 text-center bg-zinc-900 text-sm text-white font-medium font-['Pretendard'] rounded">
+          <button className="w-[116px] h-10 text-center bg-zinc-900 text-sm text-white font-medium font-['Pretendard'] rounded" onClick={() => router.back()}>
             취소
           </button>
           <button className="w-[116px] h-10 text-center bg-yellow-500 text-sm text-white font-medium font-['Pretendard'] rounded">
