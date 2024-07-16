@@ -42,7 +42,8 @@ const MainTab = () => {
                   ? "w-[20%] h-full flex justify-center text-[14px] items-center border-b border-[#9CA3AF] font-['Pretendard'] cursor-pointer"
                   : "bg-[#FEF9C3] w-[20%] h-full flex justify-center text-[14px] items-center border-b border-[#DF9E12] font-['Pretendard'] cursor-pointer"
               }
-              onClick={() => setSelect(i)}>
+              onClick={() => setSelect(i)}
+              key={i}>
               {tab[i]}
             </div>
           ))}
