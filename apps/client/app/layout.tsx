@@ -64,11 +64,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={cn(pretendard.variable)}>
-        <Header />
-        <div className="flex flex-row justify-start">
-          <Sidebar />
-          <main className="w-full ml-[240px] mt-[79px]">{children}</main>
-        </div>
+        {children}
       </body>
     </html>
   );

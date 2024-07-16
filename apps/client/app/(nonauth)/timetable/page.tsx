@@ -49,7 +49,6 @@ async function fetchData(grade: any, classes: any): Promise<string[][]> {
           .then((r) => r.subjects);
       }),
     );
-    console.log(response);
     if (response) {
       return response;
     } else {

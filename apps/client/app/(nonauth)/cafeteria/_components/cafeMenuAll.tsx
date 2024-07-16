@@ -1,5 +1,5 @@
 "use client";
-import { DatesFace } from "@/app/(calendar)/calendar/_data/calendarType";
+import { DatesFace } from "@/app/(nonauth)/(calendar)/calendar/_data/calendarType";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import CafeMenuAllPane from "./cafeMenuAllPane";

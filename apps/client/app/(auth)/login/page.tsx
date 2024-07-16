@@ -1,5 +1,5 @@
 "use client";
-import speedat from "@/public/speedat.svg";
+import speedat from "@/public/images/publicImg/speedat.svg";
 import { ChevronLeft, Eye, EyeOff, Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
