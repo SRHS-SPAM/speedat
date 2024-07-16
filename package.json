@@ -6,9 +6,13 @@
     "preinstall": "npx only-allow pnpm",
     "client": "pnpm -F client",
     "dev": "pnpm -r dev",
+    "storybook": "pnpm -r storybook",
     "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@radix-ui/react-select": "^2.1.1"
+  }
 }
