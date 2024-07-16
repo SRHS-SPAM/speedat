@@ -4,6 +4,7 @@ import { ChevronLeft, Eye, EyeOff, Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, ChangeEvent } from "react";
+import PrevButton from "../_components/prevButton";
 
 export default function Home() {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,9 +35,7 @@ export default function Home() {
   return (
     <>
       <div className="h-[100vh] bg-yellow-500">
-        <div className="w-[7.5rem] h-[7.5rem] p-6 flex justify-center items-center absolute">
-          <ChevronLeft className="w-[100%] h-[100%] text-white" />
-        </div>
+        <PrevButton />
         <div className="w-full h-full flex flex-col justify-center items-center md:items-end">
           <div className="w-[28.75rem] h-[37.5rem] bg-white m-[30px] md:m-[145px] rounded-[10px] flex justify-center items-center">
             <div className="w-[25rem] h-[27.375rem] flex flex-col items-center justify-between">

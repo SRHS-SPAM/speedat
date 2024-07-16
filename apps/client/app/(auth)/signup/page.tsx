@@ -4,6 +4,7 @@ import { ChevronLeft, Eye, EyeOff, Square } from "lucide-react";
 import { useState, ChangeEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import PrevButton from "../_components/prevButton";
 
 const Checkbox = ({ checked, onChange }: { checked: boolean; onChange: () => void }) => {
   return (
@@ -83,9 +84,7 @@ export default function Home() {
   return (
     <>
       <div className="h-[100vh] bg-yellow-500 relative flex">
-        <div className="w-[7.5rem] h-[7.5rem] p-6 justify-center items-center absolute hidden md:flex ">
-          <ChevronLeft className="w-[100%] h-[100%] text-white" />
-        </div>
+        <PrevButton />
         <div className="w-full h-full flex flex-col justify-center items-center md:items-end">
           <div className="w-[28.75rem] h-[42.5625rem] px-[30px] py-[26px] bg-white m-[30px] md:m-[145px] rounded-[10px] flex flex-col justify-between items-center">
             <div className="flex justify-center">

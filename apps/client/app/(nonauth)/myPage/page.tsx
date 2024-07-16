@@ -2,8 +2,11 @@
 import { PenTool } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  router.replace("/login");
   return (
     <div className="w-full h-auto flex justify-center">
       <div className="w-full h-auto mx-[89.5px] mt-[1.5rem] grid gap-16">
