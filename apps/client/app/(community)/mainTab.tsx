@@ -7,6 +7,7 @@ import SystemTab from "./systemTab";
 import DesignTab from "./designTab";
 import ControlTab from "./controlTab";
 import MilitaryTab from "./militaryTab";
+import Link from "next/link";
 
 const tab = ["커뮤니티 홈", "인기 글", "설계과", "제어과", "시스템", "군특성화"];
 const MainTab = () => {
@@ -35,6 +36,7 @@ const MainTab = () => {
         <div className="w-full h-[41px] flex flex-row items-center">
           {tab.map((arg, i) => (
             <div
+              key={i}
               className={
                 i != select
                   ? "w-[20%] h-full flex justify-center text-[14px] items-center border-b border-[#9CA3AF] font-['Pretendard'] cursor-pointer"
@@ -48,7 +50,9 @@ const MainTab = () => {
         </div>
         <div className="w-full flex justify-between mt-[48px]">
           <div className="h-[48px] flex flex-row items-center ">
+          <Link href="/community/writing">
             <img src="/communityWriteButton.svg" className="cursor-pointer w-[48px] h-[48px]"></img>
+            </Link>
             <div className="ml-[24px] text-zinc-900 text-2xl font-['Pretendard'] font-bold">
               당신만의 글을 작성해보세요!
             </div>
