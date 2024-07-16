@@ -56,13 +56,13 @@ export default function Home() {
 
   return (
     <div>
-      <div className="w-[1440px] h-[1500px] relative bg-white">
-        <div className="px-6 py-2.5 left-[240px] top-[95px] absolute justify-center items-center gap-2.5 inline-flex">
+      <div className="w-full relative bg-white">
+        <div className="px-6 py-2.5 top-[15px] absolute justify-center items-center gap-2.5 inline-flex">
           <div className="text-zinc-900 text-[32px] font-semibold font-['Pretendard'] leading-[38.40px]">
             2024년 6월
           </div>
         </div>
-        <div className="p-6 left-[240px] top-[153px] absolute flex-col justify-start items-end gap-3 inline-flex">
+        <div className="p-6 top-[73px] absolute flex-col justify-start items-end gap-3 inline-flex">
           <div className="justify-start items-start inline-flex">
             <div className="flex flex-row">
               {days.map((ai, i) => (
@@ -108,7 +108,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-[276px] h-[666px] left-[1164px] top-[61px] p-4 absolute border border-gray-400">
+        <div className="w-[276px] h-[666px] right-0 top-0 p-4 absolute border border-gray-400 border-t-0">
           <div className="px-2 py-1 left-[61px] top-[600px] absolute"></div>
           <div className="px-2 py-1 left-[192px] top-[600px] absolute"></div>
           <div className="w-full h-full flex-col justify-start items-center inline-flex">

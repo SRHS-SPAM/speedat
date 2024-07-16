@@ -75,7 +75,7 @@ const TimeTablePage = async ({
   const resultGrade = parseInt(searchGrade) >= 3 ? 1 : parseInt(searchGrade) + 1;
   const resultClass = parseInt(searchClass) >= 8 ? 1 : parseInt(searchClass) + 1;
   return (
-    <div className="w-full lg:w-[1200px] h-screen mb-[119px] flex justify-center items-center">
+    <div className="w-full lg:w-[1200px] mb-[119px] flex justify-center items-center 2xl">
       <div className="w-full max-w-[1040px] h-[613px]">
         <div>
           <div className="text-zinc-900 text-[24px] md:text-[32px] lg:text-[48px] font-bold font-['Pretendard'] leading-tight">

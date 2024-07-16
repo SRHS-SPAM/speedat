@@ -45,9 +45,9 @@ const Header = ({ isDark = false, isLog = false }: HeaderInputProps) => {
           </div>
         ) : (
           <div className="flex items-center gap-6">
-            <div className="h-[32px] w-[119px] bg-[#FFB700] rounded items-center flex justify-center cursor-pointer">
+            <Link href={"/login"} className="h-[32px] w-[119px] bg-[#FFB700] rounded items-center flex justify-center cursor-pointer">
               <div className="text-zinc-900 text-xs font-bold">로그인 하기</div>
-            </div>
+            </Link>
           </div>
         )}
       </div>

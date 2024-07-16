@@ -55,11 +55,12 @@ const Sidebar = ({ isDark = false }: SideBarInputProps) => {
             className={`dark:bg-zinc-900 ${isDark ? "bg-zinc-900" : "bg-white"} w-full pl-[12px] font-bold text-lg ${isDark ? "text-gray-300" : "text-gray-600"} dark:text-gray-300 border-b-[2px] border-gray-400 flex items-center`}>
             계정
           </div>
+          <Link href={"/myPage"}>
           <div
-            className={`dark:bg-zinc-900 ${isDark ? "bg-zinc-900" : "bg-white"} w-full h-[48px] pl-[12px] gap-[8px] flex items-center flex-row font-bold text-lg ${isDark ? "text-gray-300" : "text-gray-600"} dark:text-gray-300 cursor-pointer`}>
+            className={`dark:bg-zinc-900 ${isDark ? "bg-zinc-900" : "bg-white"} w-full h-[48px] pl-[12px] gap-[8px] flex items-center flex-row font-bold text-lg ${segment == "myPage" ? "bg-yellow-100" : ""} ${isDark ? "text-gray-300" : "text-gray-600"} dark:text-gray-300 cursor-pointer`}>
             <User />
             마이페이지
-          </div>
+          </div></Link>
           <div
             className={`dark:bg-zinc-900 ${isDark ? "bg-zinc-900" : "bg-white"} w-full h-[48px] pl-[12px] gap-[8px] flex items-center flex-row font-bold text-lg ${isDark ? "text-gray-300" : "text-gray-600"} dark:text-gray-300 cursor-pointer`}>
             <Settings />

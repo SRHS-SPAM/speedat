@@ -55,14 +55,16 @@ const mainPage = () => {
                   </div>
                 </div>
                 <div className="w-[371px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                  <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
+                  <Link href={"/calendar"} className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                     달력 바로가기
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="w-[528px] h-[549px]">
-              <Calendar />
+            <div className="w-[528px] h-[549px] p-10">
+              <div className="h-full w-full shadow p-4 rounded-lg">
+                <Calendar />
+              </div>
             </div>
           </div>
         </div>
@@ -211,9 +213,9 @@ const mainPage = () => {
               </div>
             </div>
             <div className="w-80 h-12 px-3 py-2 bg-yellow-500 rounded justify-start items-center gap-1 inline-flex">
-              <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
+              <Link href={"/community"} className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                 커뮤니티 바로가기
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -243,9 +245,9 @@ const mainPage = () => {
                     </div>
                   </div>
                   <div className="w-[278px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                    <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
+                    <Link href={"/cafeteria"} className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                       조식 바로가기
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -269,9 +271,9 @@ const mainPage = () => {
                     </div>
                   </div>
                   <div className="w-[278px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                    <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
+                    <Link href={"/cafeteria"} className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                       중식 바로가기
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -295,9 +297,9 @@ const mainPage = () => {
                     </div>
                   </div>
                   <div className="w-[278px] px-3 py-2 bg-yellow-500 rounded justify-center items-center gap-1 inline-flex">
-                    <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
+                    <Link href={"/cafeteria"} className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                       석식 바로가기
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -335,11 +337,11 @@ const mainPage = () => {
                     다음 교시 : 로봇 디자인
                   </div>
                 </div>
-                <div className="self-stretch h-12 px-3 py-2 bg-yellow-500 rounded justify-start items-center gap-1 inline-flex">
+                <Link href={"/timetable"} className="self-stretch h-12 px-3 py-2 bg-yellow-500 rounded justify-start items-center gap-1 inline-flex">
                   <div className="grow shrink basis-0 h-6 text-zinc-900 text-sm font-semibold font-pre leading-[16.80px] flex items-center justify-center">
                     시간표 바로가기
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
